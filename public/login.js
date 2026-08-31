@@ -17,7 +17,7 @@ form.addEventListener("submit", async function(e) {
     try {
 
         let response = await fetch(
-            "http://localhost:3000/auth/login",
+            " /auth/login",
             {
                 method: "POST",
 
