@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Student Management</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            background: #f5f7ff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .signup-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            min-height: 650px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(30, 41, 59, 0.15);
+        }
+.image-section {
+
+
+    background:
+        linear-gradient(
+            rgba(37, 99, 235, 0.75),
+            rgba(109, 40, 217, 0.75)
+        ),
+        url("/1.png"); 
+
+    background-size: cover;
+    background-position: center;
+    padding: 55px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+        .brand {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .image-content {
+            max-width: 430px;
+        }
+
+
+        .image-content h1 {
+            font-size: 46px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+
+        .image-content h1 span {
+            color: #dbeafe;
+        }
+
+
+        .image-content p {
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #eef2ff;
+        }
+
+
+        .features {
+            margin-top: 30px;
+        }
+
+
+        .feature {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 14px;
+
+            color: #e0e7ff;
+        }
+
+
+        .icon {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(255,255,255,0.15);
+
+            border-radius: 8px;
+        }
+
+        .form-section {
+
+            padding: 50px 60px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .form-section h2 {
+
+            font-size: 34px;
+
+            color: #172554;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+        }
+
+        form {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        label {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            color: #334155;
+
+            margin-bottom: 7px;
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #dbe1ea;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            margin-bottom: 18px;
+
+            background: white;
+
+            color: #334155;
+
+            transition: 0.2s;
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color: #4f46e5;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(79, 70, 229, 0.10);
+        }
+
+
+        input::placeholder {
+
+            color: #94a3b8;
+        }
+
+
+        button {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #6366f1
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            margin-top: 5px;
+        }
+
+
+        button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(37, 99, 235, 0.25);
+        }
+
+
+        .login-text {
+
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        .login-text a {
+
+            color: #2563eb;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .login-text a:hover {
+
+            text-decoration: underline;
+        }
+
+        .home {
+
+            text-align: center;
+
+            margin-top: 16px;
+        }
+
+
+        .home a {
+
+            color: #64748b;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        .home a:hover {
+
+            color: #2563eb;
+        }
+
+        @media (max-width: 800px) {
+
+            .signup-wrapper {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .image-section {
+
+                min-height: 320px;
+
+                padding: 35px;
+            }
+
+
+            .image-content h1 {
+
+                font-size: 35px;
+            }
+
+
+            .features {
+
+                display: none;
+            }
+
+
+            .form-section {
+
+                padding: 40px 35px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            body {
+
+                padding: 15px;
+            }
+
+
+            .image-section {
+
+                min-height: 270px;
+
+                padding: 25px;
+            }
+
+
+            .form-section {
+
+                padding: 30px 25px;
+            }
+
+
+            .form-section h2 {
+
+                font-size: 28px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="signup-wrapper">
+
+        <div class="image-section">
+
+
+            <div class="brand">
+
+                🎓 Student Management
+
+            </div>
+
+
+            <div class="image-content">
+
+
+                <h1>
+
+                    Start Your
+                    <span>Journey!</span>
+
+                </h1>
+
+
+                <p>
+
+                    Create your account and start
+                    managing your goals, tasks and
+                    learning progress in one place.
+
+                </p>
+
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="icon">
+                            🎯
+                        </div>
+
+                        <span>
+                            Create daily goals
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="icon">
+                            📊
+                        </div>
+
+                        <span>
+                            Track your progress
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="icon">
+                            👨‍🏫
+                        </div>
+
+                        <span>
+                            Get mentor feedback
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="form-section">
+
+
+            <h2>
+                Create Account
+            </h2>
+
+
+            <p class="subtitle">
+                Join the platform and start learning.
+            </p>
+
+
+            <form id="signupForm">
+
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <label for="role">
+                    Select Role
+                </label>
+
+                <select id="role">
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="mentor">
+                        Mentor
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Create Account
+                </button>
+
+
+            </form>
+
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+
+            <div class="home">
+
+                <a href="index.html">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>

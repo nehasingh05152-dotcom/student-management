@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management Platform</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #172554;
+            background: #f8fafc;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 24px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            background: white;
+            color: #2563eb;
+
+            border: 1px solid #2563eb;
+        }
+
+        .secondary:hover {
+            background: #eff6ff;
+        }
+
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 7%;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(30, 64, 175, 0.90),
+                    rgba(109, 40, 217, 0.85)
+                ),
+                url("../1.png");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #bfdbfe;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+
+            color: #e0e7ff;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .features {
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature-card {
+            padding: 30px;
+
+            background: #f8fafc;
+
+            border-radius: 16px;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(37, 99, 235, 0.12);
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #7c3aed
+                );
+
+            color: white;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🎓 Student Management
+        </div>
+
+        <nav>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Manage Your
+                <span>Learning Journey</span>
+            </h1>
+
+            <p>
+                Set daily goals, manage your tasks,
+                track your progress and reflect on
+                your learning journey — all from
+                one simple platform.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="signup.html"
+                    class="btn primary"
+                >
+                    Get Started
+                </a>
+
+                <a
+                    href="login.html"
+                    class="btn secondary"
+                >
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="features" id="features">
+
+        <div class="section-title">
+
+            <h2>
+                Everything You Need
+            </h2>
+
+            <p>
+                Manage your learning goals,
+                tasks and progress in one place.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Daily Goals
+                </h3>
+
+                <p>
+                    Create daily learning goals
+                    and stay focused on what
+                    matters most.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    Task Management
+                </h3>
+
+                <p>
+                    Create, update and complete
+                    your tasks while keeping
+                    everything organized.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Progress Tracking
+                </h3>
+
+                <p>
+                    Track your completion
+                    percentage and see your
+                    learning progress.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Daily Reflection
+                </h3>
+
+                <p>
+                    Record what you learned,
+                    what was difficult and
+                    what you will improve.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Search & Filter
+                </h3>
+
+                <p>
+                    Quickly find goals and
+                    filter them by status,
+                    priority or deadline.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

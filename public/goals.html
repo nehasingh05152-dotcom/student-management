@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goal reflection</title>
+    <link rel="stylesheet" href="goal.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🎓 Student Management
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="student-dashboard.html">
+            Dashboard
+        </a>
+
+    
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="login.html">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            My Daily Goals 🎯
+        </h1>
+
+        <p>
+            Set your goal in the morning and update
+            the same goal in the evening with your
+            progress and reflection.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main>
+
+    <div class="goal-form-card">
+
+        <h2>
+            🌅 Set Today's Goal
+        </h2>
+
+        <p>
+            Decide what you want to achieve today.
+            You can update this goal later in the evening.
+        </p>
+
+
+        <form id="goalForm">
+
+            <label for="title">
+                What do you want to achieve today?
+            </label>
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Example: Solve 5 LeetCode questions"
+                required
+            >
+
+
+            <label for="description">
+                Describe your goal
+            </label>
+
+            <textarea
+                id="description"
+                placeholder="Write a little more about your goal..."
+                required
+            ></textarea>
+
+
+            <label for="priority">
+                Priority
+            </label>
+
+            <select id="priority">
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium" selected>
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <label for="deadline">
+                Deadline
+            </label>
+
+            <input
+                type="date"
+                id="deadline"
+                required
+            >
+
+
+            <button type="submit">
+                🎯 Add Goal
+            </button>
+
+        </form>
+          <div class="action-buttons">
+
+    <a href="reflection.html" class="action-card">
+
+        <div class="action-icon">
+            📝
+        </div>
+
+        <h3>
+            Write Reflection
+        </h3>
+
+        <p>
+            Record what you learned
+            today.
+        </p>
+
+    </a> 
+
+
+    <a href="dailyGoal.html" class="action-card">
+
+        <div class="action-icon">
+            📝
+        </div>
+
+        <h3>
+            dailyGoal
+        </h3>
+
+        <p>
+            you can see here daily goal
+        </p>
+
+    </a>
+
+</div> 
+                
+
+
+
+        <!-- <div class="saved-goal" id="savedGoal">
+
+            <h2>📋 Today's Goal</h2>
+
+            <h3 id="showTitle"></h3>
+
+            <p id="showDescription"></p>
+
+            <p>
+                <strong>Priority:</strong>
+                <span id="showPriority"></span>
+            </p>
+
+            <p>
+                <strong>Deadline:</strong>
+                <span id="showDeadline"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+     <div class="action-buttons">
+
+    <a href="reflection.html" class="action-card">
+
+        <div class="action-icon">
+            📝
+        </div>
+
+        <h3>
+            Write Reflection
+        </h3>
+
+        <p>
+            Record what you learned
+            today.
+        </p>
+
+    </a> 
+
+
+    <a href="dailyGoal.html" class="action-card">
+
+        <div class="action-icon">
+            📝
+        </div>
+
+        <h3>
+            dailyGoal
+        </h3>
+
+        <p>
+            you can see here daily goal
+        </p>
+
+    </a>
+
+</div> 
+                
+
+
+
+ <h4>
+        🌙 Evening Update & Reflection
+    </h4>
+
+
+    <p>
+        Update the same goal with what
+        you achieved today.
+    </p>
+
+
+    <label for="progress">
+        How much did you complete? (%)
+    </label>
+
+    <input
+        type="number"
+        id="progress"
+        min="0"
+        max="100"
+        placeholder="Example: 60"
+    >
+
+
+    <label for="status">
+        Goal Status
+    </label>
+
+    <select id="status">
+
+        <option value="Pending">
+            Pending
+        </option>
+
+        <option value="In Progress">
+            In Progress
+        </option>
+
+        <option value="Completed">
+            Completed
+        </option>
+
+    </select>
+
+
+    <label for="reflection">
+        📝 Reflection
+    </label>
+
+    <textarea
+        id="reflection"
+        placeholder="Reflect on your progress..."
+    ></textarea>
+
+
+    <label for="achievement">
+        ✅ What Went Well
+    </label>
+
+    <textarea
+        id="achievement"
+        placeholder="What went well today?"
+    ></textarea>
+
+
+    <label for="difficulty">
+        ⚠️ Challenges
+    </label>
+
+    <textarea
+        id="difficulty"
+        placeholder="What challenges did you face?"
+    ></textarea>
+
+
+    <label for="remaining">
+        📌 What's Left
+    </label>
+
+    <textarea
+        id="remaining"
+        placeholder="What's remaining to complete this goal?"
+    ></textarea>
+
+
+    <div class="update-buttons">
+
+        <button
+            type="button"
+            class="update-btn"
+        >
+            💾 Save Today's Update
+        </button>
+
+
+        <button
+            type="button"
+            class="update-btn delete-btn"
+        >
+            🗑 Delete Goal
+        </button>
+
+    </div>
+
+
+    <div class="reflection-display" id="reflectionDisplay">
+
+        <h4>📖 Today's Reflection</h4>
+
+        <p>
+            <strong>Progress:</strong>
+            <span id="showProgress"></span>
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            <span id="showStatus"></span>
+        </p>
+
+        <p>
+            <strong>Reflection:</strong>
+            <span id="showReflection"></span>
+        </p>
+
+        <p>
+            <strong>What Went Well:</strong>
+            <span id="showAchievement"></span>
+        </p>
+
+        <p>
+            <strong>Challenges:</strong>
+            <span id="showDifficulty"></span>
+        </p>
+
+        <p>
+            <strong>What's Left:</strong>
+            <span id="showRemaining"></span>
+        </p>
+
+    </div> -->
+<!-- 
+    <section class="all-goals-section">
+
+        <h2>📚 All Saved Goals</h2>
+
+        <p>
+            All your goals saved in MongoDB will appear here.
+        </p>
+
+        <div id="allGoals">
+
+        </div>
+
+    </section>
+
+
+</main> -->
+
+
+<script src="goals.js"></script>
+
+</body>
+</html>

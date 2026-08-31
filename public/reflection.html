@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Evening Update & Reflection</title>
+
+    <link rel="stylesheet" href="reflection.css">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="student-dashboard.html">
+            Dashboard
+        </a>
+        <a href="dailyGoal.html"> Daily Goals</a>
+
+
+        <a href="goals.html">
+            Goals
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="login.html">
+            Logout
+        </a>
+
+    </nav>
+
+    <div class="page-container">
+
+        <div class="reflection-card">
+
+            <div class="card-header">
+                <div>
+                    <h1>🌙 Evening Update & Reflection</h1>
+
+                    <p>
+                        Update the same goal with what you achieved today.
+                    </p>
+                </div>
+            </div>
+
+
+
+            <label for="progress">
+                How much did you complete? (%)
+            </label>
+
+            <input
+                type="number"
+                id="progress"
+                min="0"
+                max="100"
+                placeholder="Example: 60"
+            >
+
+            <label for="status">
+                Goal Status
+            </label>
+
+            <select id="status">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+
+            <label for="reflection">
+                📝 Reflection
+            </label>
+
+            <textarea
+                id="reflection"
+                placeholder="Reflect on your progress..."
+            ></textarea>
+
+            <label for="achievement">
+                ✅ What Went Well
+            </label>
+
+            <textarea
+                id="achievement"
+                placeholder="What went well today?"
+            ></textarea>
+
+
+            <label for="difficulty">
+                ⚠️ Challenges
+            </label>
+
+            <textarea
+                id="difficulty"
+                placeholder="What challenges did you face?"
+            ></textarea>
+            <label for="remaining">
+                📌 What's Left
+            </label>
+
+            <textarea
+                id="remaining"
+                placeholder="What's remaining to complete this goal?"
+            ></textarea>
+
+            <div class="update-buttons">
+
+                <button
+                    type="button"
+                    class="update-btn"
+                >
+                    💾 Save Today's Update
+                </button>
+
+
+                <button
+                    type="button"
+                    class="update-btn delete-btn"
+                >
+                    🗑 Delete Goal
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- <div
+            class="reflection-display"
+            id="reflectionDisplay"
+        > -->
+
+            <!-- <h2>📖 Today's Reflection</h2>
+
+
+            <div class="reflection-item">
+                <strong>Progress:</strong>
+                <span id="showProgress"></span>
+            </div>
+
+
+            <div class="reflection-item">
+                <strong>Status:</strong>
+                <span id="showStatus"></span>
+            </div>
+
+
+            <div class="reflection-item">
+                <strong>Reflection:</strong>
+                <span id="showReflection"></span>
+            </div>
+
+
+            <div class="reflection-item">
+                <strong>What Went Well:</strong>
+                <span id="showAchievement"></span>
+            </div>
+
+
+            <div class="reflection-item">
+                <strong>Challenges:</strong>
+                <span id="showDifficulty"></span>
+            </div>
+
+
+            <div class="reflection-item">
+                <strong>What's Left:</strong>
+                <span id="showRemaining"></span>
+            </div>
+
+        </div>
+
+    </div> -->
+<script src="reflection.js"></script>
+</body>
+</html>

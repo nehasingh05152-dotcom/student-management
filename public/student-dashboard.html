@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Dashboard | Student Management</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #172554;
+        }
+
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1d4ed8,
+                    #6366f1,
+                    #7c3aed
+                );
+
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow:
+                0 4px 15px
+                rgba(37, 99, 235, 0.2);
+        }
+
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+
+        nav a:hover {
+            color: #bfdbfe;
+        }
+
+        .hero {
+            min-height: 42vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 65px 7%;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(29, 78, 216, 0.88),
+                    rgba(109, 40, 217, 0.88)
+                ),
+                url("../1.png");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 span {
+            color: #bfdbfe;
+        }
+
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e0e7ff;
+            margin-bottom: 25px;
+        }
+
+
+        .hero-btn {
+            display: inline-block;
+
+            padding: 13px 23px;
+
+            background: white;
+            color: #2563eb;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+
+        main {
+            width: 86%;
+            max-width: 1100px;
+
+            margin: 55px auto;
+        }
+
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+
+        .section-title p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+
+        .progress-section {
+            margin-bottom: 50px;
+        }
+
+
+        .progress-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .progress-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15, 23, 42, 0.05);
+
+            transition: 0.3s;
+        }
+
+
+        .progress-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(37, 99, 235, 0.1);
+        }
+
+
+        .card-icon {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+
+        .progress-card h3 {
+            color: #64748b;
+
+            font-size: 14px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .progress-card p {
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #172554;
+        }
+
+
+        .overall-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 16px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15, 23, 42, 0.05);
+
+            margin-bottom: 50px;
+        }
+
+
+        .overall-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+        }
+
+
+        .overall-top h3 {
+            font-size: 18px;
+        }
+
+
+        #overallProgress {
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #4f46e5;
+        }
+
+
+        .progress-bar {
+            width: 100%;
+
+            height: 13px;
+
+            background: #e2e8f0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-fill {
+            width: 0%;
+
+            height: 100%;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed
+                );
+        }
+
+
+        .actions-section {
+            background: #eff6ff;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .actions-section h2 {
+            font-size: 27px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .actions-section > p {
+            color: #64748b;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .actions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .action-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 13px;
+
+            text-decoration: none;
+
+            color: #172554;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+        }
+
+
+        .action-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #818cf8;
+
+            box-shadow:
+                0 10px 25px
+                rgba(37, 99, 235, 0.1);
+        }
+
+
+        .action-icon {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .action-card h3 {
+            font-size: 17px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .action-card p {
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        footer {
+            margin-top: 70px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #0f172a;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+
+            .progress-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+
+            main {
+                width: 92%;
+            }
+
+
+            .progress-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .overall-card {
+                padding: 22px;
+            }
+
+
+            .actions-section {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="logo">
+            🎓 Student Management
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="student-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="goals.html">
+                Goals
+            </a>
+
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="login.html">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome,
+                <span>Student! 👋</span>
+            </h1>
+
+
+            <p>
+                Stay organized, manage your goals,
+                track your progress and reflect on
+                your learning journey every day.
+            </p>
+
+
+            <a
+                href="goals.html"
+                class="hero-btn"
+            >
+                🎯 Manage My Goals
+            </a>
+
+        </div>
+
+    </section>
+
+    <main>
+
+
+        <section class="progress-section">
+
+            <div class="section-title">
+
+                <h2>
+                    My Progress
+                </h2>
+
+                <p>
+                    Keep track of your goals and learning progress.
+                </p>
+
+            </div>
+
+
+            <div class="progress-grid">
+
+
+                <div class="progress-card">
+
+                    <div class="card-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Total Goals
+                    </h3>
+
+                    <p id="totalGoals">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <div class="card-icon">
+                        ✅
+                    </div>
+
+                    <h3>
+                        Completed
+                    </h3>
+
+                    <p id="completedGoals">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <div class="card-icon">
+                        ⏳
+                    </div>
+
+                    <h3>
+                        Pending
+                    </h3>
+
+                    <p id="pendingGoals">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <div class="card-icon">
+                        📈
+                    </div>
+
+                    <h3>
+                        Overall Progress
+                    </h3>
+
+                    <p id="overallProgress">
+                        0%
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <div class="overall-card">
+
+            <div class="overall-top">
+
+                <h3>
+                    Overall Learning Progress
+                </h3>
+
+                <span id="progressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <section class="actions-section">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <p>
+                Quickly access the tools you use most.
+            </p>
+
+
+            <div class="actions">
+
+
+                <a
+                    href="goals.html"
+                    class="action-card"
+                >
+
+                    <div class="action-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Create Goal
+                    </h3>
+
+                    <p>
+                        Add a new daily goal and
+                        start working towards it.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="reflection.html"
+                    class="action-card"
+                >
+
+                    <div class="action-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Write Reflection
+                    </h3>
+
+                    <p>
+                        Record what you learned
+                        today.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="action-card"
+                >
+
+                    <div class="action-icon">
+                        👤
+                    </div>
+
+                    <h3>
+                        View Profile
+                    </h3>
+
+                    <p>
+                        View and update your
+                        personal information.
+                    </p>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        🎓 Student Management Platform © 2026
+
+    </footer>
+
+
+    <script src="dashboard.js"></script>
+
+
+    
+</body>
+
+</html>

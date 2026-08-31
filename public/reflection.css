@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f8fafc;
+
+    color: #172554;
+
+    min-height: 100vh;
+
+    padding: 50px 20px;
+}
+
+
+.page-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+.reflection-card {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 15px 35px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+
+.card-header {
+
+    margin-bottom: 28px;
+}
+
+
+.card-header h1 {
+
+    font-size: 30px;
+
+    color: #172554;
+
+    margin-bottom: 10px;
+}
+
+
+.card-header p {
+
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+.reflection-card label {
+
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+.reflection-card input,
+.reflection-card select,
+.reflection-card textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+
+.reflection-card input {
+
+    height: 48px;
+}
+
+
+.reflection-card textarea {
+
+    min-height: 105px;
+
+    resize: vertical;
+}
+
+.reflection-card input:focus,
+.reflection-card select:focus,
+.reflection-card textarea:focus {
+
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+.reflection-card input::placeholder,
+.reflection-card textarea::placeholder {
+
+    color: #64748b;
+}
+
+.update-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+
+.update-btn {
+
+    flex: 1;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.update-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+.delete-btn {
+
+    background: #dc2626;
+}
+
+
+.delete-btn:hover {
+
+    background: #b91c1c;
+
+    box-shadow:
+        0 8px 20px
+        rgba(220, 38, 38, 0.20);
+}
+
+
+.reflection-display {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border-left: 5px solid #7c3aed;
+
+    border-top: 1px solid #e2e8f0;
+
+    border-right: 1px solid #e2e8f0;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+.reflection-display h2 {
+
+    font-size: 24px;
+
+    color: #312e81;
+
+    margin-bottom: 25px;
+}
+
+
+
+.reflection-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.reflection-item:last-child {
+
+    border-bottom: none;
+}
+
+
+.reflection-item strong {
+
+    color: #172554;
+
+    font-size: 15px;
+}
+
+
+.reflection-item span {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+
+    word-wrap: break-word;
+}
+
+
+
+@media (max-width: 800px) {
+
+    body {
+
+        padding: 35px 18px;
+    }
+
+    .reflection-card {
+
+        padding: 28px;
+    }
+
+    .card-header h1 {
+
+        font-size: 27px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    body {
+
+        padding: 25px 15px;
+    }
+
+    .reflection-card {
+
+        padding: 22px;
+
+        border-radius: 15px;
+    }
+
+    .card-header h1 {
+
+        font-size: 23px;
+    }
+
+    .card-header p {
+
+        font-size: 14px;
+    }
+
+    .reflection-card input,
+    .reflection-card select,
+    .reflection-card textarea {
+
+        font-size: 14px;
+    }
+
+    .update-buttons {
+
+        flex-direction: column;
+    }
+
+    .update-btn {
+
+        width: 100%;
+    }
+
+    .reflection-display {
+
+        padding: 22px;
+    }
+
+    .reflection-display h2 {
+
+        font-size: 21px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+}

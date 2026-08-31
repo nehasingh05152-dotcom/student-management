@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Student Management</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            background: #f5f7ff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            min-height: 620px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(30, 41, 59, 0.15);
+        }
+
+   .image-section {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(37, 99, 235, 0.75),
+            rgba(109, 40, 217, 0.75)
+        ),
+        url("/1.png"); 
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 55px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+        .brand {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .image-content {
+            max-width: 430px;
+        }
+
+        .image-content h1 {
+            font-size: 48px;
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+        .image-content h1 span {
+            color: #dbeafe;
+        }
+
+        .image-content p {
+            font-size: 17px;
+            line-height: 1.7;
+
+            color: #eef2ff;
+        }
+
+        .quote {
+            font-size: 14px;
+
+            color: #dbeafe;
+
+            margin-top: 30px;
+        }
+
+        .form-section {
+            padding: 70px 65px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            font-size: 34px;
+
+            color: #172554;
+
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            color: #64748b;
+
+            margin-bottom: 35px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+
+            font-weight: bold;
+
+            color: #334155;
+
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid #dbe1ea;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            margin-bottom: 22px;
+
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+
+            box-shadow:
+                0 0 0 3px rgba(79, 70, 229, 0.10);
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+
+        button {
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #6366f1
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            margin-top: 5px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.25);
+        }
+
+
+        .signup {
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+        .signup a {
+            color: #2563eb;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .home {
+            text-align: center;
+
+            margin-top: 18px;
+        }
+
+        .home a {
+            text-decoration: none;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+        .home a:hover {
+            color: #2563eb;
+        }
+
+
+
+        @media (max-width: 800px) {
+
+            .login-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .image-section {
+                min-height: 300px;
+
+                padding: 35px;
+            }
+
+            .image-content h1 {
+                font-size: 35px;
+            }
+
+            .form-section {
+                padding: 45px 35px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .image-section {
+                min-height: 260px;
+            }
+
+            .form-section {
+                padding: 35px 25px;
+            }
+
+            .form-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="login-wrapper">
+
+        <div class="image-section">
+
+            <div class="brand">
+                🎓 Student Management
+            </div>
+
+
+            <div class="image-content">
+
+                <h1>
+                    Welcome
+                    <span>Back!</span>
+                </h1>
+
+                <p> Continue your learning journey,
+                    manage your goals and keep
+                    improving every day</p>
+
+                <p class="quote">
+                    “Small progress every day leads
+                    to big results.” 🚀
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="form-section">
+
+            <h2>Login  </h2>
+
+            <p class="welcome-text">
+                Welcome back! Please enter your details. </p>
+
+
+            <form id="loginForm">
+
+
+                <label for="email">
+                    Email Address </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required  >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required >
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="signup">
+                Don't have an account?
+
+                <a href="signup.html">
+                    Create Account
+                </a>
+            </p>
+
+
+            <div class="home">
+
+                <a href="index.html">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

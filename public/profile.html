@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Student Management</title>
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #172554;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #1d4ed8, #6366f1, #7c3aed);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #bfdbfe;
+        }
+
+        .hero {
+            min-height: 38vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 7%;
+            color: white;
+            background: linear-gradient(rgba(29, 78, 216, 0.88), rgba(109, 40, 217, 0.88)), url("../1.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e0e7ff;
+        }
+
+        main {
+            width: 86%;
+            max-width: 1000px;
+            margin: 55px auto;
+        }
+
+        .profile-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 25px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            font-size: 42px;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 7px;
+        }
+
+        .profile-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .phase-badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: #eef2ff;
+            color: #4f46e5;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .form-card h2 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .form-card > p {
+            color: #64748b;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+            color: #334155;
+            background: white;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 25px;
+            text-align: center;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                display: none;
+            }
+
+            .profile-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            main {
+                width: 92%;
+            }
+
+            .form-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🎓 Student Management</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student-dashboard.html">Dashboard</a>
+            <a href="goals.html">Goals</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>My Profile 👤</h1>
+            <p>Manage your personal information and keep your student profile updated.</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="profile-wrapper">
+            <div class="profile-card">
+                <div class="profile-icon">👩‍🎓</div>
+                <h2 id="display-name">Student</h2>
+                <p>Student Management Platform</p>
+                <span class="phase-badge" id="display-phase">Phase 1</span>
+            </div>
+            <div class="form-card">
+                <h2>Profile Information</h2>
+                <p>Update your information below.</p>
+
+                <form id="profileForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+
+                    <label for="phase">Current Phase</label>
+                    <input type="text" id="phase" placeholder="Example: Phase 5">
+
+                    <button type="submit">Update Profile</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        🎓 Student Management Platform © 2026
+    </footer>
+
+    <script src="profile.js"></script>
+
+</body>
+</html>
