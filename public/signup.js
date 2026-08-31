@@ -12,14 +12,19 @@ form.addEventListener("submit", async function(e) {
     };
 
     try {
-    
-        let response = await fetch("http://localhost:3000/auth/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        });
+
+        let response = await fetch(
+            "https://student-management-8ds2.onrender.com/auth/signup",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(user)
+            }
+        );
 
         let data = await response.json();
 
@@ -28,9 +33,17 @@ form.addEventListener("submit", async function(e) {
         if (response.ok) {
             window.location.href = "login.html";
         }
+
     } catch (error) {
-        console.error("Error during signup:", error);
-        alert("Server response error. Please check backend connection.");
+
+        console.error(
+            "Error during signup:",
+            error
+        );
+
+        alert(
+            "Server response error. Please check backend connection."
+        );
     }
 
 });

@@ -12,7 +12,7 @@ async function loadGoal() {
         }
 
         const res = await fetch(
-            `http://localhost:3000/goals?userId=${encodeURIComponent(userId)}`
+            `https://student-management-8ds2.onrender.com/goals?userId=${encodeURIComponent(userId)}`
         );
 
         if (!res.ok) {
@@ -107,7 +107,7 @@ document.querySelector(".update-btn").addEventListener("click", async () => {
     try {
 
         const res = await fetch(
-            `http://localhost:3000/goals/${goal._id}`,
+            `https://student-management-8ds2.onrender.com/goals/${goal._id}`,
             {
                 method: "PUT",
 
@@ -154,7 +154,7 @@ document.querySelector(".delete-btn").addEventListener("click", async () => {
     try {
 
         const res = await fetch(
-            `http://localhost:3000/goals/${goal._id}?userId=${encodeURIComponent(userId)}`,
+            `https://student-management-8ds2.onrender.com/goals/${goal._id}?userId=${encodeURIComponent(userId)}`,
             {
                 method: "DELETE"
             }

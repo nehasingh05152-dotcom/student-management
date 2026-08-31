@@ -10,7 +10,7 @@ async function loadAllGoals() {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/goals?userId=${encodeURIComponent(userId)}`
+            `https://student-management-8ds2.onrender.com/goals?userId=${encodeURIComponent(userId)}`
         );
 
         if (!response.ok) {

@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-
             const nameVal =
                 document.getElementById("name").value;
 
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
 
                 const response = await fetch(
-                    "http://localhost:3000/profile",
+                    "https://student-management-8ds2.onrender.com/profile",
                     {
                         method: "POST",
 

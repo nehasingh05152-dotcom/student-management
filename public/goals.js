@@ -9,7 +9,7 @@ async function loadGoal() {
 
     try {
 
-        const response = await fetch(`http://localhost:3000/goals?userId=${userId}`);
+        const response = await fetch(`https://student-management-8ds2.onrender.com/goals?userId=${userId}`);
 
         if (!response.ok) {
             throw new Error("Did not fetch goals");
@@ -91,7 +91,7 @@ goalForm.addEventListener("submit", async function (e) {
   remaining: ""
     };
     try {
-        const response = await fetch("http://localhost:3000/goals", {
+        const response = await fetch("https://student-management-8ds2.onrender.com/goals", {
 
             method: "POST",
 
