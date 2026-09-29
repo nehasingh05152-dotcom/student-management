@@ -10,7 +10,6 @@ async function loadGoal() {
             alert("User ID nahi mili. Please login again.");
             return;
         }
-
         const res = await fetch(
             `https://student-management-8ds2.onrender.com/goals?userId=${encodeURIComponent(userId)}`
         );

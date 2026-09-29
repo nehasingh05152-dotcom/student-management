@@ -9,7 +9,7 @@ form.addEventListener("submit", async function(e) {
     };
 
     try {
-        // Full Render URL use kiya hai taaki request hamesha sahi Jagah jaaye
+    
         let response = await fetch("https://student-management-8ds2.onrender.com/auth/login", {
             method: "POST",
             headers: {

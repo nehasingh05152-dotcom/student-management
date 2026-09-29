@@ -86,8 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         `HTTP Error: ${response.status}`
                     );
                 }
-
-
                 localStorage.setItem(
                     "userName",
                     nameVal
@@ -97,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "userEmail",
                     emailVal
                 );
-
-
                 updateCardUI(
                     nameVal,
                     phaseVal

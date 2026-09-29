@@ -1,4 +1,4 @@
-const Goal = require("../models/Goal");
+const Goal = require("../models/Goal"); 
 const createGoal = async (req, res) => {
 
     try {
@@ -8,7 +8,7 @@ const createGoal = async (req, res) => {
             userId: req.body.userId,
 
             title: req.body.title,
-
+            
             description: req.body.description,
 
             priority: req.body.priority,
@@ -57,7 +57,6 @@ const createGoal = async (req, res) => {
 const getGoals = async (req, res) => {
 
     try {
-
         const userId = req.query.userId;
 
 
@@ -71,7 +70,6 @@ const getGoals = async (req, res) => {
 
 
         const goals = await Goal.find({
-
             userId: userId
 
         }).sort({ _id: -1 });
@@ -138,7 +136,6 @@ const updateGoal = async (req, res) => {
 
             {
                 new: true,
-
                 runValidators: true
             }
         );
@@ -217,10 +214,7 @@ const deleteGoal = async (req, res) => {
 module.exports = {
 
     createGoal,
-
-    getGoals,
-
+     getGoals,
     updateGoal,
-
     deleteGoal
 };
